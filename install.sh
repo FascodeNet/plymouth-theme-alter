@@ -9,6 +9,13 @@ elif [ ! -d /usr/share/plymouth/themes ]; then
 	exit 1
 fi
 
+if [ ! $1 ]; then
+	echo "Please choose theme at least one."
+	exit 1
+fi
+
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+
 for ((i=1; i <= $#; i++)); do
 	case ${!i} in
 
@@ -19,7 +26,7 @@ for ((i=1; i <= $#; i++)); do
 		cp $SCRIPT_DIR/alter-logo/intro/* /usr/share/plymouth/themes/alter-logo/ && \
 		cp $SCRIPT_DIR/alter-logo/loop/* /usr/share/plymouth/themes/alter-logo/ && \
 		cp $SCRIPT_DIR/alter-logo/misc/* /usr/share/plymouth/themes/alter-logo/ && \
-		plymouth-set-default-theme -R alter-logo >/dev/null 2>&1 && \
+		echo "installing alter-logo ......" && plymouth-set-default-theme -R alter-logo >/dev/null 2>&1 && \
 		echo "INSTALL alter-logo DONE !!!!" || echo "ERROR HAS OCCURRED !!" ;;
 
 	esac

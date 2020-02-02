@@ -28,10 +28,10 @@ for (i = 1; i <= loop_image_total; i++) {
     loop[i].sprite.SetPosition(logo.x, logo.y, 0);
 }
 
-# BOOT
+# ANIMATION
 i = 1;
 l = 1;
-fun boot_callback() {
+fun animation_callback() {
     if (l == loop_image_total) {
         loop[l].sprite.SetOpacity(0);
         l = 1;
@@ -47,25 +47,14 @@ fun boot_callback() {
     }
 }
 
-# SHUTDOWN
-i = 1;
-fun boot_callback() {
-    if (i == loop_image_total) {
-        loop[i].sprite.SetOpacity(0);
-        i = 1;
-    }
-    intro[i].sprite.SetOpacity(0);
-    i++;
-    intro[i].sprite.SetOpacity(1);
-}
-
 # CALLBACK
 if (Plymouth.GetMode() == "boot") {
-    Plymouth.SetRefreshFunction(boot_callback);
+    Plymouth.SetRefreshFunction(animation_callback);
 } else {
-    Plymouth.SetRefreshFunction(shutdown_callback);
+    i = intro_image_total;
+    Plymouth.SetRefreshFunction(animation_callback);
 }
-Plymouth.SetQuitFunction(shutdown_callback);
+Plymouth.SetQuitFunction(animation_callback);
 
 # DIALOGUE
 

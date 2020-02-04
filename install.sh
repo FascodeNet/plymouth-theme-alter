@@ -30,6 +30,17 @@ for ((i=1; i <= $#; i++)); do
 		echo "installing alter-logo ......" && plymouth-set-default-theme -R alter-logo >/dev/null 2>&1 && \
 		echo "INSTALL alter-logo DONE !!!!" || echo "ERROR HAS OCCURRED !!" ;;
 
+		# INSTALL alter-pp
+		"alter-pp" ) \
+		rm -rf /usr/share/plymouth/themes/alter-pp ; \
+		mkdir /usr/share/plymouth/themes/alter-pp && \
+		cp $SCRIPT_DIR/alter-pp/intro/* /usr/share/plymouth/themes/alter-pp/ && \
+		cp $SCRIPT_DIR/alter-pp/loop/* /usr/share/plymouth/themes/alter-pp/ && \
+		cp $SCRIPT_DIR/alter-pp/misc/* /usr/share/plymouth/themes/alter-pp/ && \
+		echo "installing alter-pp ......" && plymouth-set-default-theme -R alter-pp >/dev/null 2>&1 && \
+		echo "INSTALL alter-pp DONE !!!!" || echo "ERROR HAS OCCURRED !!" ;;
+
+
 	esac
 done
 

@@ -11,7 +11,7 @@ fi
 
 if [ ! $1 ]; then
 	echo "Please choose theme at least one."
-	echo "Example: ~# install.sh alter-logo"
+	echo "Example: ~# install.sh alter-logo alter-pp"
 	exit 1
 fi
 

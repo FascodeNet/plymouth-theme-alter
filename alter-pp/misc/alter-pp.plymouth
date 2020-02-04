@@ -4,5 +4,5 @@ Description=A plymouth theme for Alter
 ModuleName=script
 
 [script]
-ImageDir=/usr/share/plymouth/themes/alter-logo
-ScriptFile=/usr/share/plymouth/themes/alter-logo/alter-logo.script
+ImageDir=/usr/share/plymouth/themes/alter-pp
+ScriptFile=/usr/share/plymouth/themes/alter-pp/alter-pp.script

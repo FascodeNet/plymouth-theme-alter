@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Alter-Logo
+Description=A plymouth theme for Alter
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/alter-logo
+ScriptFile=/usr/share/plymouth/themes/alter-logo/alter-logo.script
